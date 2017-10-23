@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="format-detection" content="telephone=yes">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/tabs.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</head>
+<body class="page">
+
+	<div class="section">
+
+		<div class="tabs-menu">
+
+			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1">
+				Button 1
+			</a>
+			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2">
+				Button 2
+			</a>
+			<a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3">
+				Button 3
+			</a>
+			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4">
+				Button 4
+			</a>
+			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5">
+				Button 5
+			</a>
+
+		</div>
+		<!-- end tabs-menu -->
+
+		<div class="tabs tabs_indent">
+			<div class="tabs__inner" id="js-tabs-1">
+				<div class="tabs__block">
+					Tabs 1
+				</div>
+			</div>
+			<div class="tabs__inner" id="js-tabs-2">
+				<div class="tabs__block">
+					Tabs 2
+				</div>
+			</div>
+			<div class="tabs__inner" id="js-tabs-3">
+				<div class="tabs__block">
+					Tabs 3
+				</div>
+			</div>
+			<div class="tabs__inner" id="js-tabs-4">
+				<div class="tabs__block">
+					Tabs 4
+				</div>
+			</div>
+			<div class="tabs__inner" id="js-tabs-5">
+				<div class="tabs__block">
+					Tabs 5
+				</div>
+			</div>
+		</div>
+		<!-- /.tabs  -->
+
+		<div class="tabs-menu">
+
+			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-6">
+				Button 1
+			</a>
+			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-7">
+				Button 2
+			</a>
+			<a class="tabs-menu__link js-tabs-menu__link2 active" href="#js-tabs-8">
+				Button 3
+			</a>
+			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-9">
+				Button 4
+			</a>
+			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-10">
+				Button 5
+			</a>
+
+		</div>
+		<!-- end tabs-menu -->
+
+		<div class="tabs tabs_indent">
+			<div class="tabs__inner" id="js-tabs-6">
+				<div class="tabs__block">
+					Tabs 1
+				</div>
+			</div>
+			<div class="tabs__inner" id="js-tabs-7">
+				<div class="tabs__block">
+					Tabs 2
+				</div>
+			</div>
+			<div class="tabs__inner" id="js-tabs-8">
+				<div class="tabs__block">
+					Tabs 3
+				</div>
+			</div>
+			<div class="tabs__inner" id="js-tabs-9">
+				<div class="tabs__block">
+					Tabs 4
+				</div>
+			</div>
+			<div class="tabs__inner" id="js-tabs-10">
+				<div class="tabs__block">
+					Tabs 5
+				</div>
+			</div>
+		</div>
+		<!-- /.tabs  -->
+
+		<p>
+			<b>Структура HTML меню и табов</b>
+		</p>
+
+		<pre>
+
+			&lt;div class="tabs-menu"&gt;
+
+				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1"&gt;
+					Button 1
+				&lt;/a&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2"&gt;
+					Button 2
+				&lt;/a&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3"&gt;
+					Button 3
+				&lt;/a&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4"&gt;
+					Button 4
+				&lt;/a&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5"&gt;
+					Button 5
+				&lt;/a&gt;
+
+			&lt;/div&gt;
+			&lt;!-- /.tabs-menu --&gt;
+
+			&lt;div class="tabs"&gt;
+				&lt;div class="tabs__inner" id="js-tabs-1"&gt;
+					Tabs 1
+				&lt;/div&gt;
+				&lt;div class="tabs__inner" id="js-tabs-2"&gt;
+					Tabs 2
+				&lt;/div&gt;
+				&lt;div class="tabs__inner" id="js-tabs-3"&gt;
+					Tabs 3
+				&lt;/div&gt;
+				&lt;div class="tabs__inner" id="js-tabs-4"&gt;
+					Tabs 4
+				&lt;/div&gt;
+				&lt;div class="tabs__inner" id="js-tabs-5"&gt;
+					Tabs 5
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- /.tabs  --&gt;
+
+		</pre>
+
+		<p>
+			<b>В скрипте</b>
+		</p>
+
+		<pre>
+			new Tabs();
+
+			new Tabs({
+				classMain: 'tabs-menu',			// главный класс меню, эти опции стоят по умолчанию
+				buttons: '.js-tabs-menu__link',		// селекторы кнопок меню, эти опции стоят по умолчанию
+				offsetMobile: 70			// смещение относительно документа в мобилках, эти опции стоят по умолчанию
+			});
+		</pre>
+
+	</div>
+
+</body>
+</html>
