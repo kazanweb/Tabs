@@ -44,8 +44,6 @@
 					obj.tags.tabs[index].classList.add('active');
 					obj.tags.xsbuttons[index].classList.add('active');
 					obj.triggerActive = true;
-
-					history.pushState(null, null, this.getAttribute('href'));
 				}
 
 				this.addEventListener(event, function() {
