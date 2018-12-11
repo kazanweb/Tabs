@@ -7,16 +7,10 @@
 
 		this.options = this.extendFn({
 			classMain: 'tabs-menu',
-			buttons: '.js-tabs-menu__link',
-			tabs: '.js-tabs__inner',
+			parent: '[data-tabs]',
+			buttons: '[data-tabs-children]',
 			offsetMobile: 70
 		}, opts);
-
-
-		this.triggerActive = false;
-		this.tags = {};
-		this.tags.xsbuttons = [];
-		this.tags.tabs = [];
 
 		this.init();
 
@@ -28,70 +22,80 @@
 
 			var obj = this;
 
-			this.tags.buttons = document.querySelectorAll(this.options.buttons);
+			parents = document.querySelectorAll(this.options.parent);
 
-			if(!this.tags.buttons.length) {
+			if(!parents.length) {
 				return false;
 			}
 
-			this.each(this.tags.buttons, function(index) {
+			this.each(parents, function(index) {
 
-				obj.tags.tabs.push(document.querySelector(this.getAttribute('href')));
+				var triggerActive = false;
+				var tags = {};
+				tags.xsbuttons = [];
+				tags.tabs = [];
 
-				obj.tags.xsbuttons.push(obj.insert('div', {'class': obj.options.classMain + '__xslink'}, this.innerHTML, obj.tags.tabs[index]));
+				tags.buttons = this.querySelectorAll(obj.options.buttons);
 
-				if(this.classList.contains('active')) {
-					obj.tags.tabs[index].classList.add('active');
-					obj.tags.xsbuttons[index].classList.add('active');
-					obj.triggerActive = true;
-				}
+				obj.each(tags.buttons, function(index) {
 
-				this.addEventListener(event, function() {
+					tags.tabs.push(document.querySelector(this.getAttribute('href')));
 
-					obj.each(obj.tags.buttons, function(i) {
+					tags.xsbuttons.push(obj.insert('div', {'class': obj.options.classMain + '__xslink'}, this.innerHTML, tags.tabs[index]));
 
-						this.classList.remove('active');
-						obj.tags.xsbuttons[i].classList.remove('active');
-						obj.tags.tabs[i].classList.remove('active');
+					if(this.classList.contains('active')) {
+						tags.tabs[index].classList.add('active');
+						tags.xsbuttons[index].classList.add('active');
+						obj.triggerActive = true;
+					}
 
+					this.addEventListener(event, function() {
+
+						obj.each(tags.buttons, function(i) {
+
+							this.classList.remove('active');
+							tags.xsbuttons[i].classList.remove('active');
+							tags.tabs[i].classList.remove('active');
+
+						});
+
+						this.classList.add('active');
+						tags.xsbuttons[index].classList.add('active');
+						tags.tabs[index].classList.add('active');
+
+					}, false);
+
+					tags.xsbuttons[index].addEventListener(event, function() {
+
+						obj.each(tags.xsbuttons, function(i) {
+
+							this.classList.remove('active');
+							tags.buttons[i].classList.remove('active');
+							tags.tabs[i].classList.remove('active');
+
+						});
+
+						this.classList.add('active');
+						tags.buttons[index].classList.add('active');
+						tags.tabs[index].classList.add('active');
+
+						window.scrollTo(0, window.pageYOffset + this.getBoundingClientRect().top - obj.options.offsetMobile);
+
+					}, false);
+
+					this.addEventListener('click', function(e) {
+						e.preventDefault();
 					});
 
-					this.classList.add('active');
-					obj.tags.xsbuttons[index].classList.add('active');
-					obj.tags.tabs[index].classList.add('active');
-
-				}, false);
-
-				obj.tags.xsbuttons[index].addEventListener(event, function() {
-
-					obj.each(obj.tags.xsbuttons, function(i) {
-
-						this.classList.remove('active');
-						obj.tags.buttons[i].classList.remove('active');
-						obj.tags.tabs[i].classList.remove('active');
-
-					});
-
-					this.classList.add('active');
-					obj.tags.buttons[index].classList.add('active');
-					obj.tags.tabs[index].classList.add('active');
-
-					window.scrollTo(0, window.pageYOffset + this.getBoundingClientRect().top - obj.options.offsetMobile);
-
-				}, false);
-
-				this.addEventListener('click', function(e) {
-					e.preventDefault();
 				});
 
+				if(!obj.triggerActive) {
+					tags.buttons[0].classList.add('active');
+					tags.xsbuttons[0].classList.add('active');
+					tags.tabs[0].classList.add('active');
+				}
+
 			});
-
-			if(!this.triggerActive) {
-				this.tags.buttons[0].classList.add('active');
-				this.tags.xsbuttons[0].classList.add('active');
-				this.tags.tabs[0].classList.add('active');
-			}
-
 		},
 
 		each: function(nodes, callback) {

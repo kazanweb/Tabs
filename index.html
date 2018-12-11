@@ -21,21 +21,21 @@
 
 	<div class="section">
 
-		<div class="tabs-menu">
+		<div class="tabs-menu" data-tabs>
 
-			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1">
+			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1" data-tabs-children>
 				Button 1
 			</a>
-			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2">
+			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2" data-tabs-children>
 				Button 2
 			</a>
-			<a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3">
+			<a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3" data-tabs-children>
 				Button 3
 			</a>
-			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4">
+			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4" data-tabs-children>
 				Button 4
 			</a>
-			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5">
+			<a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5" data-tabs-children>
 				Button 5
 			</a>
 
@@ -71,21 +71,21 @@
 		</div>
 		<!-- /.tabs  -->
 
-		<div class="tabs-menu">
+		<div class="tabs-menu" data-tabs>
 
-			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-6">
+			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-6" data-tabs-children>
 				Button 1
 			</a>
-			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-7">
+			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-7" data-tabs-children>
 				Button 2
 			</a>
-			<a class="tabs-menu__link js-tabs-menu__link2 active" href="#js-tabs-8">
+			<a class="tabs-menu__link js-tabs-menu__link2 active" href="#js-tabs-8" data-tabs-children>
 				Button 3
 			</a>
-			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-9">
+			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-9" data-tabs-children>
 				Button 4
 			</a>
-			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-10">
+			<a class="tabs-menu__link js-tabs-menu__link2" href="#js-tabs-10" data-tabs-children>
 				Button 5
 			</a>
 
@@ -127,21 +127,21 @@
 
 		<pre>
 
-			&lt;div class="tabs-menu"&gt;
+			&lt;div class="tabs-menu" data-tabs&gt;
 
-				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1"&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1" data-tabs-children&gt;
 					Button 1
 				&lt;/a&gt;
-				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2"&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2" data-tabs-children&gt;
 					Button 2
 				&lt;/a&gt;
-				&lt;a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3"&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3" data-tabs-children&gt;
 					Button 3
 				&lt;/a&gt;
-				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4"&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4" data-tabs-children&gt;
 					Button 4
 				&lt;/a&gt;
-				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5"&gt;
+				&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5" data-tabs-children&gt;
 					Button 5
 				&lt;/a&gt;
 
@@ -175,12 +175,6 @@
 
 		<pre>
 			new Tabs();
-
-			new Tabs({
-				classMain: 'tabs-menu',			// главный класс меню, эти опции стоят по умолчанию
-				buttons: '.js-tabs-menu__link',		// селекторы кнопок меню, эти опции стоят по умолчанию
-				offsetMobile: 70			// смещение относительно документа в мобилках, эти опции стоят по умолчанию
-			});
 		</pre>
 
 	</div>
