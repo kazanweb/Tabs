@@ -6,19 +6,19 @@
 
 	&lt;div class="tabs-menu" data-tabs&gt;
 
-		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1" data-tabs-children&gt;
+		&lt;a class="tabs-menu__link" href="#js-tabs-1" data-tabs-children&gt;
 			Button 1
 		&lt;/a&gt;
-		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2" data-tabs-children&gt;
+		&lt;a class="tabs-menu__link" href="#js-tabs-2" data-tabs-children&gt;
 			Button 2
 		&lt;/a&gt;
-		&lt;a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3" data-tabs-children&gt;
+		&lt;a class="tabs-menu__link active" href="#js-tabs-3" data-tabs-children&gt;
 			Button 3
 		&lt;/a&gt;
-		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4" data-tabs-children&gt;
+		&lt;a class="tabs-menu__link" href="#js-tabs-4" data-tabs-children&gt;
 			Button 4
 		&lt;/a&gt;
-		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5" data-tabs-children&gt;
+		&lt;a class="tabs-menu__link" href="#js-tabs-5" data-tabs-children&gt;
 			Button 5
 		&lt;/a&gt;
 
