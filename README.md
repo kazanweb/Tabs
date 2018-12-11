@@ -4,21 +4,21 @@
 
 <pre>
 
-	&lt;div class="tabs-menu"&gt;
+	&lt;div class="tabs-menu" data-tabs&gt;
 
-		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1"&gt;
+		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-1" data-tabs-children&gt;
 			Button 1
 		&lt;/a&gt;
-		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2"&gt;
+		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-2" data-tabs-children&gt;
 			Button 2
 		&lt;/a&gt;
-		&lt;a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3"&gt;
+		&lt;a class="tabs-menu__link js-tabs-menu__link active" href="#js-tabs-3" data-tabs-children&gt;
 			Button 3
 		&lt;/a&gt;
-		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4"&gt;
+		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-4" data-tabs-children&gt;
 			Button 4
 		&lt;/a&gt;
-		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5"&gt;
+		&lt;a class="tabs-menu__link js-tabs-menu__link" href="#js-tabs-5" data-tabs-children&gt;
 			Button 5
 		&lt;/a&gt;
 
@@ -52,10 +52,4 @@
 
 <pre>
 	new Tabs();
-
-	new Tabs({
-		classMain: 'tabs-menu',			// главный класс меню, эти опции стоят по умолчанию
-		buttons: '.js-tabs-menu__link',		// селекторы кнопок меню, эти опции стоят по умолчанию
-		offsetMobile: 70			// смещение относительно документа в мобилках, эти опции стоят по умолчанию
-	});
 </pre>
